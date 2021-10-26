@@ -16,7 +16,6 @@ declare interface "SmartKeyboard{
   'Keyboard 1 - Send Key X':'1'
   'Keyboard 1 - Send Freq':'0'
   'Keyboard 1 - Static Mode':'1',
-
   'Keyboard 1 - Key 0 - Label':'Cutoff',
   'Keyboard 1 - Key 1 - Label':'Wet/Dry',
   'Keyboard 1 - Key 2 - Label':'Voice Gain',
@@ -55,9 +54,9 @@ with
 gate = button("gate");
 f = nentry("freq",200,40,2000,0.01);
 maxBend = 1.06; //2^(1/12) semitone
-//bend = hslider("bend[acc: 0 0 -100 0 100]",1,(1/maxBend),maxBend,0.001):si.polySmooth(t,0.999,1);
+//bend = hslider("bend[acc: 0 0 -100 0 100]",1,(1/maxBend),maxBend,0.001):si.polySmooth(t,0.999,1); //DEBUG
 bend = nentry("bend[acc: 0 0 -1000 0 1000]",1,0,10,0.01) : si.polySmooth(t,0.999,1);
-//bend = 1;
+//bend = 1; //DEBUG
 g = nentry("gain",1,0,1,0.01);
 t = button("gate");
 y = hslider("y",0.5,0,1,0.01):si.smoo;
